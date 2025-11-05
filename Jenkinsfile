@@ -15,6 +15,8 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
+                    sh 'whoami'
+                    sh 'echo $PATH'
                     sh 'sudo -u nidhishreebh docker build -t autodocflow:python-doc-api-gemini-jenkins .'
                 }
             }
