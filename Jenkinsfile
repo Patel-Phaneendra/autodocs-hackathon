@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     environment {
+        PATH = "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Docker.app/Contents/Resources/bin:${env.PATH}"
         GEMINI_API_KEY = credentials('gemini-api-key') // Store your API key securely in Jenkins Credentials
     }
 
@@ -18,7 +19,7 @@ pipeline {
                     sh 'pwd'
                     sh 'printenv'
                     sh 'whoami'
-                    sh 'export PATH=/usr/local/bin:$PATH'
+                    //sh 'export PATH=/usr/local/bin:$PATH'
                     sh 'echo $PATH'
                     sh 'docker build -t autodocflow:python-doc-api-gemini-jenkins .'
                 }
