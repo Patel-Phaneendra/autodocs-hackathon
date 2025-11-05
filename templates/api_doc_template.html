@@ -1,0 +1,11 @@
+<html>
+<head><title>Multi-language API Documentation</title></head>
+<body>
+<h1>API Documentation</h1>
+{% for route in routes %}
+  <h2>{{ route.name }} ({{ route.lang }})</h2>
+  <p><strong>Path:</strong> {{ route.path }}</p>
+  <p><strong>Description:</strong> {{ route.doc }}</p>
+{% endfor %}
+</body>
+</html>
