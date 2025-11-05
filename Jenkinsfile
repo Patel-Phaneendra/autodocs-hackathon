@@ -18,7 +18,7 @@ pipeline {
                     sh 'whoami'
                     sh 'export PATH=/usr/local/bin:$PATH'
                     sh 'echo $PATH'
-                    sh 'sudo -u nidhishreebh docker build -t autodocflow:python-doc-api-gemini-jenkins .'
+                    sh 'docker build -t autodocflow:python-doc-api-gemini-jenkins .'
                 }
             }
         }
