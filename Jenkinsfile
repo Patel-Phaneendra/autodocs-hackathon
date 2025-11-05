@@ -37,7 +37,9 @@ pipeline {
         stage("Check 'out' Folder Files") {
             steps {
                 script {
-                    sh 'cd out'
+                    sh 'pwd'
+                    sh 'cd /Users/nidhishreebh/.jenkins/workspace/docflow-poc-2/out'
+                    //sh 'cd out'
                     sh 'ls -ltr'
                 }
             }
