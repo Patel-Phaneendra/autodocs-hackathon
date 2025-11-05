@@ -15,6 +15,8 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
+                    sh 'pwd'
+                    sh 'printenv'
                     sh 'whoami'
                     sh 'export PATH=/usr/local/bin:$PATH'
                     sh 'echo $PATH'
