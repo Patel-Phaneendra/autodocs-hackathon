@@ -1,0 +1,18 @@
+Home
+    1. sign up 
+        Enter
+        1. Name
+        2. Password
+        3. Contact Number
+        4. Email Id
+    2. Log in
+        Enter
+        1. Name
+        2. Password
+
+            Successful Login
+                1. View Menu 
+                2. Order Something
+                3. View Bill
+                4. Return Back to Home
+    3. Bye
