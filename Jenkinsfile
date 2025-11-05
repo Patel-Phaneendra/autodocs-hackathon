@@ -37,8 +37,8 @@ pipeline {
         stage("Check 'out' Folder Files") {
             steps {
                 script {
-                    def outDir = "${env.WORKSPACE}/out"
-                    sh "[ -d ${outDir} ] && ls -l ${outDir} || echo 'out directory does not exist'"
+                    sh 'cd out'
+                    sh 'ls -ltr'
                 }
             }
         }
@@ -46,17 +46,7 @@ pipeline {
         stage("Read and Show Contents of 'out' Folder Files") {
             steps {
                 script {
-                    def outDir = "${env.WORKSPACE}/out"
-                    sh '''
-                        if [ -d '${outDir}' ]; then
-                            for f in ${outDir}/*; do
-                                echo "=== $f ==="
-                                cat "$f"
-                            done
-                        else
-                            echo "No 'out' directory found."
-                        fi
-                    '''
+                    sh 'ls -ltr | awk '{print $9}'| grep api | xargs cat'
                 }
             }
         }
