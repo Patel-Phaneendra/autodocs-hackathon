@@ -7,13 +7,13 @@ pipeline {
     }
 
     stages {
-        stage('Checkout Code') {
+        stage(Checkout Code) {
             steps {
                 git url: 'https://github.com/Patel-Phaneendra/autodocs-hackathon.git', branch: 'main'
             }
         }
 
-        stage('Build Docker Image') {
+        stage(Build Docker Image) {
             steps {
                 script {
                     sh 'pwd'
@@ -26,7 +26,7 @@ pipeline {
             }
         }
 
-        stage('Run Docker Container') {
+        stage(Run Docker Container) {
             steps {
                 script {
                     sh 'docker run --rm -v $PWD:/app -e GEMINI_API_KEY=${GEMINI_API_KEY} autodocflow:python-doc-api-gemini-jenkins'
@@ -34,21 +34,21 @@ pipeline {
             }
         }
 
-        stage("Check 'out' Folder Files") {
-            steps {
-                script {
-                    sh 'pwd'
-                    sh 'cd /Users/nidhishreebh/.jenkins/workspace/docflow-poc-2/out'
-                    //sh 'cd out'
-                    sh 'ls -ltr'
-                }
-            }
-        }
+        // stage("Check 'out' Folder Files") {
+        //     steps {
+        //         script {
+        //             sh 'pwd'
+        //             sh 'cd /Users/nidhishreebh/.jenkins/workspace/docflow-poc-2/out'
+        //             //sh 'cd out'
+        //             sh 'ls -ltr'
+        //         }
+        //     }
+        // }
 
-        stage("Read and Show Contents of 'out' Folder Files") {
+        stage(Read and Show Contents of 'out' Folder Files) {
             steps {
                 script {
-                    sh 'ls -ltr | awk '{print $9}'| grep api | xargs cat'
+                    sh 'ls -ltr /Users/nidhishreebh/.jenkins/workspace/docflow-poc-2/out | awk '{print $9}'| grep api | xargs cat'
                 }
             }
         }
