@@ -34,6 +34,31 @@ pipeline {
             }
         }
 
+        stage('Check and Display API Docs Files') {
+            steps {
+                script {
+                     def txtPath  = 'out/api_docs.txt'
+                     def htmlPath = 'out/api_docs.html'
+
+                    def txtExists  = fileExists(txtPath)
+                    def htmlExists = fileExists(htmlPath)
+
+                    if (txtExists && htmlExists) {
+                    echo "Both api_docs.txt and api_docs.html were found in the out folder."
+                    echo "===== api_docs.txt ====="
+                    echo readFile(txtPath)
+                    echo "===== api_docs.html ====="
+                    echo readFile(htmlPath)
+                      } else {
+                        if (!txtExists)  { echo "api_docs.txt is missing in the out folder." }
+                        if (!htmlExists) { echo "api_docs.html is missing in the out folder." }
+                        error('Required API docs files missing!') // Fail the pipeline if any file is missing
+              }
+            }
+          }
+        }
+
+        
         // stage("Check 'out' Folder Files") {
         //     steps {
         //         script {
