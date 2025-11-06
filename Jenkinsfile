@@ -82,7 +82,7 @@ pipeline {
               }
             }
 
-       // // stage("Check 'out' Folder Files") {
+     //  // // stage("Check 'out' Folder Files") {
         //     steps {
         //         script {
         //             sh 'pwd'
