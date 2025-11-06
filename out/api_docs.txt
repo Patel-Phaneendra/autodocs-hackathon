@@ -1,0 +1,92 @@
+API Documentation (Plain English)
+========================================
+
+Name: hello_world
+Path: /hello
+Type: flask_route
+Defined in: sample_api_flask.py
+Docstring:
+  > Returns a simple greeting message.
+
+----------------------------------------
+
+Name: get_item
+Path: /items/<int:item_id>
+Type: flask_route
+Defined in: sample_api_flask.py
+Docstring:
+  > Returns details for a specific item by ID.
+
+----------------------------------------
+
+Name: User
+Type: class
+Defined in: main.py
+Code Explanation (AI Generated):
+  > Summary unavailable due to an unexpected error.
+
+----------------------------------------
+
+Name: Restaurant
+Type: class
+Defined in: main.py
+Code Explanation (AI Generated):
+  > Summary unavailable due to an unexpected error.
+
+----------------------------------------
+
+Name: __init__
+Type: function
+Defined in: main.py
+Code Explanation (AI Generated):
+  > Summary unavailable due to an unexpected error.
+
+----------------------------------------
+
+Name: __str__
+Type: function
+Defined in: main.py
+Code Explanation (AI Generated):
+  > Summary unavailable due to an unexpected error.
+
+----------------------------------------
+
+Name: signUp
+Type: function
+Defined in: main.py
+Code Explanation (AI Generated):
+  > Summary unavailable due to an unexpected error.
+
+----------------------------------------
+
+Name: table
+Type: function
+Defined in: main.py
+Code Explanation (AI Generated):
+  > Summary unavailable due to an unexpected error.
+
+----------------------------------------
+
+Name: logIn
+Type: function
+Defined in: main.py
+Code Explanation (AI Generated):
+  > Summary unavailable due to an unexpected error.
+
+----------------------------------------
+
+Name: viewUser
+Type: function
+Defined in: main.py
+Code Explanation (AI Generated):
+  > Summary unavailable due to an unexpected error.
+
+----------------------------------------
+
+Name: call
+Type: function
+Defined in: main.py
+Code Explanation (AI Generated):
+  > Summary unavailable due to an unexpected error.
+
+----------------------------------------
