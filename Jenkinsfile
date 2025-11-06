@@ -58,7 +58,30 @@ pipeline {
           }
         }
 
-        
+
+        stage('Commit and Push Output Files') {
+          steps {
+              script {
+                 // Configure git identity if needed
+                  sh 'git config user.email "jenkins@localhost"'
+                  sh 'git config user.name "Jenkins CI"'
+      
+              // Add generated files from /out
+                  sh 'git add out/api_docs.txt out/api_docs.html'
+      
+              // Commit changes if there is anything to commit
+                  sh '''
+                  if ! git diff --cached --quiet; then
+                  git commit -m "Add/Update docs from Jenkins pipeline"
+                  git push origin HEAD:main
+                else
+                  echo "No changes to commit."
+                fi
+                  '''
+                }
+              }
+            }
+
        // // stage("Check 'out' Folder Files") {
         //     steps {
         //         script {
@@ -70,12 +93,5 @@ pipeline {
         //     }
         // }
 
-        // stage('Read files') {
-        //     steps {
-        //         script {
-        //             sh 'ls -ltr /Users/nidhishreebh/.jenkins/workspace/docflow-poc-2/out | awk '{print $9}'| grep api | xargs cat'
-        //         }
-        //     }
-        // }
     }
 }
