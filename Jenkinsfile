@@ -70,12 +70,12 @@ pipeline {
         //     }
         // }
 
-        stage('Read files') {
-            steps {
-                script {
-                    sh 'ls -ltr /Users/nidhishreebh/.jenkins/workspace/docflow-poc-2/out | awk '{print $9}'| grep api | xargs cat'
-                }
-            }
-        }
+        // stage('Read files') {
+        //     steps {
+        //         script {
+        //             sh 'ls -ltr /Users/nidhishreebh/.jenkins/workspace/docflow-poc-2/out | awk '{print $9}'| grep api | xargs cat'
+        //         }
+        //     }
+        // }
     }
 }
